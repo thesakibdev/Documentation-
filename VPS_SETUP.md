@@ -5,14 +5,10 @@
 
 
 - Preparing the VPS Environment
-- Setting Up the MongoDB Database
-- Deploying the Express and Node.js Backend
-- Deploying the React Frontends
 - Configuring Nginx as a Reverse Proxy
-- Setting Up SSL Certificates
 ### 1. Preparing the VPS Environment
 
-#### Get you VPS Hosting here : [Hostinger VPS](https://greatstack.dev/go/hostinger-vps)
+#### Get you VPS Hosting here : [https://www.hostinger.com/cart?product=vps%3Avps_kvm_1&period=12&referral_type=cart_link&REFERRALCODE=6PQTHESAK42O&referral_id=0196e48e-a1b9-715d-9bed-a89937d4998b]
 
 Log in to Your VPS in Terminal 
 
@@ -42,57 +38,10 @@ Install Git
   sudo apt install -y git
 ```
 
-
-###  2. Setting Up the MongoDB Database
-
-If you want to setup MongoDB on VPS Follow this Guide: [click here](https://github.com/GreatStackDev/notes/blob/main/MongoDB_Setup_on_VPS.md)
-
-### 3. Deploying the Express and Node.js Backend
-
-Clone Your Backend Repository
-
-```bash
- mkdir /var/www
-```
-
-```bash
- cd /var/www
-```
-```bash
- git clone https://github.com/yourusername/your-repo.git
-```
-```bash
- cd your-repo/backend
-```
-
-Install Dependencies
-
-```bash
- npm install
-```
-Create .env file & configure Environment Variables
-
-```bash
- nano .env
-```
-
-add environment variables then save and exit (Ctrl + X, then Y and Enter).
-
-
-Installing pm2 to Start Backend
+Installing pm2 for start express backend
 
 ```bash
  npm install -g pm2
-```
-```bash
- pm2 start server.js --name project-backend
-```
-Start Backend on startup
-```bash
- pm2 startup
-```
-```bash
- pm2 save
 ```
 Allowing backend port in firewall 
 
@@ -110,29 +59,7 @@ If firewall is disable then enable it using
  sudo ufw allow 4000
 ```
 
-### 4. Deploying the React Frontends
-
-Creating Build of React Applications
-```bash
- cd path-to-your-first-react-app
-```
-```bash
- npm install
-```
-If you have ".env" file in your project
-
-Create .env file and paste the variables
-```bash
- nano .env
-```
-Create build of project
-```bash
- npm run build
-```
-
-Repeat for the second or mulitiple React app.
-
-Install Nginx
+Install Nginx For Web Server
 
 ```bash
  sudo apt install -y nginx
