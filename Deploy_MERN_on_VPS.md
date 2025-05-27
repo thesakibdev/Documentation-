@@ -205,6 +205,15 @@ nginx -t
 ```bash
 systemctl restart nginx
 ```
+Update project.
+
+```bash
+git fetch origin main
+```
+Next 
+```bash
+git reset --hard origin/main
+```
 
 ### 5. Configuring Nginx as a Reverse Proxy
 
